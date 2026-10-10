@@ -1,3 +1,42 @@
 # Default code owners for the Chennai Track repository
 # All files require review by the repository owner
 *       @yokesh-ks
+
+# Frontend application, UI components, and design system
+/src/frontend/        @yokesh-ks
+/src/components/       @yokesh-ks
+**/*.tsx               @yokesh-ks
+**/*.ts                @yokesh-ks
+**/*.css               @yokesh-ks
+**/*.scss              @yokesh-ks
+
+# Backend API, services, and server code
+/src/backend/          @yokesh-ks
+/src/api/              @yokesh-ks
+/server/               @yokesh-ks
+**/*.js                @yokesh-ks
+**/*.mjs               @yokesh-ks
+**/*.cjs               @yokesh-ks
+
+# Data pipeline, datasets, and content
+/data/                 @yokesh-ks
+/datasets/             @yokesh-ks
+/content/              @yokesh-ks
+**/*.json              @yokesh-ks
+**/*.csv               @yokesh-ks
+
+# Documentation and product requirements
+/docs/                 @yokesh-ks
+README.md              @yokesh-ks
+AGENTS.md              @yokesh-ks
+
+# Infrastructure, CI/CD, and deployment configuration
+.github/               @yokesh-ks
+**/*.yml               @yokesh-ks
+**/*.yaml              @yokesh-ks
+Dockerfile             @yokesh-ks
+docker-compose.yml     @yokesh-ks
+
+# PWA, service worker, and offline cache configuration
+/src/sw/               @yokesh-ks
+**/sw*.js              @yokesh-ks
