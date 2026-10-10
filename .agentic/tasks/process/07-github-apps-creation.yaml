@@ -1,0 +1,46 @@
+id: 07-github-apps-creation
+epic: process
+agent: architect-agent
+title: "GitHub Apps Creation"
+description: "Create GitHub Apps for each agent (architect-agent, frontend-agent, backend-agent, data-agent, qa-agent, devops-agent, docs-agent) with scoped permissions (no admin access)."
+priority: High
+effort: M
+inputs:
+  - "Organization/User: yokesh-ks"
+  - "Repository: chennai-track"
+  - "Agents: architect-agent, frontend-agent, backend-agent, data-agent, qa-agent, devops-agent, docs-agent"
+  - "Permissions per agent: scoped to their domain (no admin, no delete)"
+outputs:
+  - "GitHub App created for each agent (7 total)"
+  - "Each app has unique name and slug"
+  - "Permissions: Contents (R/W), Issues (R/W), Pull Requests (R/W), Metadata (R)"
+  - "No admin permissions on any app"
+  - "Webhook URLs configured for each app"
+  - "Private keys generated and stored securely"
+  - "App IDs and installation IDs documented"
+acceptance_criteria:
+  - "7 GitHub Apps exist under yokesh-ks"
+  - "Each app named correctly (e.g., 'chennai-track-architect-agent')"
+  - "Permissions are scoped: Contents (write), Issues (write), Pull Requests (write), Metadata (read)"
+  - "No app has Administration permission"
+  - "No app has Delete permission"
+  - "Webhook secret configured for each app"
+  - "Private key downloaded for each app"
+  - "App installation on chennai-track repo verified"
+  - "App IDs recorded in secure location"
+validation_gates:
+  - "List GitHub Apps via API and verify count = 7"
+  - "Verify permissions for each app via API"
+  - "Verify no admin permissions on any app"
+  - "Test webhook delivery for one app"
+  - "Verify app can create issue via API"
+  - "Verify app can create PR via API"
+depends_on:
+  - 06-framework-commit-push
+estimates:
+  effort_hours: 5
+  complexity: Medium
+  risk: Medium
+linked_issue: 8
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

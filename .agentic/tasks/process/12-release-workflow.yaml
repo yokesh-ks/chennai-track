@@ -1,0 +1,55 @@
+id: 12-release-workflow
+epic: process
+agent: devops-agent
+title: "Release Workflow"
+description: "Create GitHub Actions release workflow that triggers on signed tag push, builds the app, runs full test suite, and deploys to Google Play Console internal track."
+priority: High
+effort: M
+inputs:
+  - "Repository: yokesh-ks/chennai-track"
+  - "Trigger: signed git tag (v*.*.*)"
+  - "Secrets: PLAY_SERVICE_ACCOUNT, KEYSTORE_*"
+  - "Build: Gradle (Android) / Vite (Web)"
+  - "Signing: Android keystore"
+  - "Target: Google Play Console internal testing track"
+outputs:
+  - ".github/workflows/release.yml"
+  - "Job: validate-tag (signed, semantic version)"
+  - "Job: build-android (AAB signed with keystore)"
+  - "Job: build-web (production build)"
+  - "Job: test-full (all test suites)"
+  - "Job: deploy-play-internal (upload AAB to Play Console)"
+  - "Job: create-github-release (with changelog)"
+  - "Slack/email notification on success/failure"
+acceptance_criteria:
+  - "Workflow triggers only on signed tags matching v*.*.*"
+  - "Validates tag signature (git verify-tag)"
+  - "Builds Android AAB with keystore signing"
+  - "Builds web production bundle"
+  - "Runs full test suite (unit, integration, e2e, a11y)"
+  - "Uploads AAB to Play Console internal track"
+  - "Creates GitHub Release with auto-generated changelog"
+  - "Notifies team on completion"
+  - "Rollback capability (manual workflow dispatch)"
+  - "Secrets never exposed in logs"
+validation_gates:
+  - "Create test signed tag locally"
+  - "Push tag and verify workflow triggers"
+  - "Verify tag signature validation passes"
+  - "Verify AAB built and signed correctly"
+  - "Verify web build produces correct output"
+  - "Verify all tests pass"
+  - "Verify AAB uploaded to Play Console internal track"
+  - "Verify GitHub Release created"
+  - "Verify notification sent"
+  - "Test rollback workflow"
+depends_on:
+  - 04-ci-pipeline
+  - 08-secrets-configuration
+estimates:
+  effort_hours: 8
+  complexity: Medium
+  risk: High
+linked_issue: null
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

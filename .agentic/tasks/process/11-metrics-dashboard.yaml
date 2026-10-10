@@ -1,0 +1,50 @@
+id: 11-metrics-dashboard
+epic: process
+agent: frontend-agent
+title: "Process Metrics Dashboard"
+description: "Build a dashboard to visualize process metrics: cycle time, review time, CI pass rate, autonomy percentage, and agent utilization."
+priority: Medium
+effort: M
+inputs:
+  - "Orchestrator API: /metrics, /tasks, /agents endpoints"
+  - "GitHub API: PR timeline, review data, CI run data"
+  - "Frontend: React + TypeScript + Recharts/Chart.js"
+  - "Deployment: GitHub Pages or Cloud Run"
+outputs:
+  - "Dashboard web app at /dashboard route"
+  - "Metric: Cycle Time (issue created → PR merged)"
+  - "Metric: Review Time (PR opened → first review → approved)"
+  - "Metric: CI Pass Rate (passed / total runs)"
+  - "Metric: Autonomy % (agent-created PRs / total PRs)"
+  - "Metric: Agent Utilization (tasks per agent over time)"
+  - "Metric: Task Throughput (completed per week)"
+  - "Filters: date range, agent, epic, label"
+  - "Export: CSV, JSON"
+acceptance_criteria:
+  - "Dashboard loads and displays all 6 metrics"
+  - "Cycle time calculated correctly from GitHub data"
+  - "Review time shows median and p95"
+  - "CI pass rate shows trend over time"
+  - "Autonomy % distinguishes agent vs human PRs"
+  - "Agent utilization shows per-agent breakdown"
+  - "Date range filter works (7d, 30d, 90d, custom)"
+  - "Data refreshes automatically (5 min interval)"
+  - "Export buttons generate valid CSV/JSON"
+  - "Responsive design works on mobile"
+validation_gates:
+  - "Deploy dashboard and verify accessible"
+  - "Verify metrics match manual calculations"
+  - "Test all filter combinations"
+  - "Test export functionality"
+  - "Verify mobile responsiveness"
+  - "Verify auto-refresh works"
+  - "Load test with 1 year of data"
+depends_on:
+  - 10-agent-orchestration
+estimates:
+  effort_hours: 12
+  complexity: Medium
+  risk: Medium
+linked_issue: null
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

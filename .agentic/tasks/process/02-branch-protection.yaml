@@ -1,0 +1,43 @@
+id: 02-branch-protection
+epic: process
+agent: architect-agent
+title: "Branch Protection Configuration"
+description: "Configure branch protection rules for main and develop branches to enforce zero-direct-push policy, required reviews, signed commits, and linear history."
+priority: High
+effort: S
+inputs:
+  - "Repository: yokesh-ks/chennai-track"
+  - "Branches to protect: main, develop"
+  - "Protection rules: no direct push, required PR reviews, signed commits, linear history, status checks"
+outputs:
+  - "Branch protection rules applied to main branch"
+  - "Branch protection rules applied to develop branch"
+  - "Required status checks configured"
+  - "Required review count set to 1"
+  - "Signed commits enforced"
+  - "Linear history enforced"
+acceptance_criteria:
+  - "main branch has branch protection enabled"
+  - "develop branch has branch protection enabled"
+  - "Direct pushes to main are blocked"
+  - "Direct pushes to develop are blocked"
+  - "At least 1 approving review required for PR merge"
+  - "Signed commits required for merge"
+  - "Linear history enforced (no merge commits)"
+  - "Status checks required before merge"
+  - "Admin users not exempt from rules"
+validation_gates:
+  - "Verify branch protection via GitHub API"
+  - "Test direct push rejection"
+  - "Verify required review count"
+  - "Verify signed commit enforcement"
+  - "Verify linear history setting"
+depends_on:
+  - 01-repo-setup
+estimates:
+  effort_hours: 3
+  complexity: Low
+  risk: Low
+linked_issue: 3
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

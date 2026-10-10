@@ -1,0 +1,67 @@
+id: process
+title: "Agentic Development Process"
+description: "End-to-end automated development workflow with GitHub-enforced gates, agent orchestration, and zero-direct-push policy."
+status: planned
+priority: 0
+labels:
+  - Epic
+  - Process
+agents:
+  - architect-agent
+tasks:
+  - id: 01-repo-setup
+    title: "Repository Initialization"
+    issue: 2
+  - id: 02-branch-protection
+    title: "Branch Protection Configuration"
+    issue: 3
+  - id: 03-governance-files
+    title: "Governance Files"
+    issue: 4
+  - id: 04-ci-pipeline
+    title: "CI Pipeline"
+    issue: 5
+  - id: 05-process-epic-definition
+    title: "Process Epic Definition"
+    issue: 6
+  - id: 06-framework-commit-push
+    title: "Framework Commit & Push"
+    issue: 7
+  - id: 07-github-apps-creation
+    title: "GitHub Apps Creation"
+    issue: 8
+  - id: 08-secrets-configuration
+    title: "Secrets Configuration"
+    issue: 9
+  - id: 09-first-task-issue-creation
+    title: "First Task Issue Creation"
+    issue: 10
+  - id: 10-agent-orchestration
+    title: "Agent Orchestration System"
+    issue: null
+  - id: 11-metrics-dashboard
+    title: "Process Metrics Dashboard"
+    issue: null
+  - id: 12-release-workflow
+    title: "Release Workflow"
+    issue: null
+  - id: 13-documentation
+    title: "Process Documentation"
+    issue: null
+acceptance_criteria:
+  - "GitHub repo exists with branch protection on main/develop (no direct push, required reviews, signed commits, linear history)"
+  - "GitHub Apps created for each agent with scoped permissions (no admin access)"
+  - "Secrets configured: ORCHESTRATOR_TOKEN, PLAY_SERVICE_ACCOUNT, KEYSTORE_*"
+  - "CI workflow validates: PR→task link, lint, unit tests, instrumented tests, build-release, a11y audit"
+  - "CODEOWNERS file enforces domain-specific reviews"
+  - "Issue template for agent tasks with required fields"
+  - "PR template enforces 'Closes #' and acceptance checklist"
+  - "Orchestrator can create task issues + branches via API"
+  - "Agent workers can claim, implement, push, create PRs via API"
+  - "Release workflow triggers on signed tag push to Play Console internal track"
+  - "Process metrics dashboard (cycle time, review time, CI pass rate, autonomy %)"
+dependencies: []
+linked_issues:
+  - 1
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

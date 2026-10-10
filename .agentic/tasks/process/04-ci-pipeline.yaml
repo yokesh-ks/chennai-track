@@ -1,0 +1,53 @@
+id: 04-ci-pipeline
+epic: process
+agent: architect-agent
+title: "CI Pipeline"
+description: "Create GitHub Actions CI workflow that validates PR→task link, runs lint, unit tests, instrumented tests, build-release, and accessibility audit."
+priority: High
+effort: M
+inputs:
+  - "Repository: yokesh-ks/chennai-track"
+  - "Node.js version: 20.x"
+  - "Package manager: npm"
+  - "Test framework: vitest/jest"
+  - "Lint: ESLint + Prettier"
+  - "Build: Vite/Next.js"
+  - "Accessibility: axe-core"
+outputs:
+  - ".github/workflows/ci.yml with complete pipeline"
+  - "Job: validate-pr-task-link"
+  - "Job: lint"
+  - "Job: unit-tests"
+  - "Job: instrumented-tests"
+  - "Job: build-release"
+  - "Job: a11y-audit"
+  - "Required status checks for branch protection"
+acceptance_criteria:
+  - "CI workflow triggers on PR open/synchronize"
+  - "validate-pr-task-link job checks PR description contains 'Closes #' or 'Fixes #'"
+  - "lint job runs ESLint and Prettier checks"
+  - "unit-tests job runs vitest/jest with coverage threshold"
+  - "instrumented-tests job runs Playwright/Cypress tests"
+  - "build-release job creates production build"
+  - "a11y-audit job runs axe-core against built app"
+  - "All jobs must pass for PR to merge"
+  - "Workflow uses caching for node_modules"
+  - "Workflow publishes test reports and coverage"
+validation_gates:
+  - "Trigger CI on test PR"
+  - "Verify all jobs execute"
+  - "Verify PR-task link validation fails without Closes #"
+  - "Verify lint catches errors"
+  - "Verify tests run and report coverage"
+  - "Verify build produces artifacts"
+  - "Verify a11y audit runs"
+depends_on:
+  - 01-repo-setup
+  - 03-governance-files
+estimates:
+  effort_hours: 6
+  complexity: Medium
+  risk: Medium
+linked_issue: 5
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

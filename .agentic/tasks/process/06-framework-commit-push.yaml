@@ -1,0 +1,46 @@
+id: 06-framework-commit-push
+epic: process
+agent: architect-agent
+title: "Framework Commit & Push"
+description: "Commit and push the agentic framework files (.agentic/ directory, governance files, CI workflow) to the repository with signed commits."
+priority: High
+effort: S
+inputs:
+  - "Local .agentic/ directory with epic and task definitions"
+  - "Governance files: CODEOWNERS, issue templates, PR template, CONTRIBUTING.md"
+  - "CI workflow: .github/workflows/ci.yml"
+  - "GPG signing key configured"
+outputs:
+  - "Signed commit with all framework files"
+  - "Push to main branch (via PR since direct push blocked)"
+  - "PR created with 'Closes #7' reference"
+  - "PR passes all CI checks"
+  - "PR merged after review"
+acceptance_criteria:
+  - "All .agentic/ files committed with signed commit"
+  - "All governance files committed with signed commit"
+  - "CI workflow committed with signed commit"
+  - "Commit signatures verified (GPG)"
+  - "PR created targeting main branch"
+  - "PR description includes 'Closes #7'"
+  - "PR passes all CI jobs (lint, tests, build, a11y)"
+  - "PR approved by at least one reviewer"
+  - "PR merged with linear history (squash or rebase)"
+validation_gates:
+  - "Verify commit signatures with git log --show-signature"
+  - "Verify PR exists and references issue #7"
+  - "Verify CI passes on PR"
+  - "Verify merge method is squash or rebase"
+  - "Verify files present in main branch after merge"
+depends_on:
+  - 02-branch-protection
+  - 03-governance-files
+  - 04-ci-pipeline
+  - 05-process-epic-definition
+estimates:
+  effort_hours: 2
+  complexity: Low
+  risk: Low
+linked_issue: 7
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

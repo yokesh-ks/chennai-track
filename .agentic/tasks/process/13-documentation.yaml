@@ -1,0 +1,54 @@
+id: 13-documentation
+epic: process
+agent: docs-agent
+title: "Process Documentation"
+description: "Create comprehensive documentation for the agentic development process including architecture, workflows, agent guides, and troubleshooting."
+priority: Medium
+effort: M
+inputs:
+  - "All process epic tasks and their implementations"
+  - "Agent capabilities and APIs"
+  - "GitHub App configurations"
+  - "CI/CD pipeline details"
+outputs:
+  - "docs/process/architecture.md - System architecture overview"
+  - "docs/process/workflows.md - End-to-end workflows"
+  - "docs/process/agent-guide.md - How to build/customize agents"
+  - "docs/process/orchestrator-guide.md - Orchestrator operations"
+  - "docs/process/github-apps.md - GitHub App setup and permissions"
+  - "docs/process/secrets-management.md - Secrets handling guide"
+  - "docs/process/ci-cd.md - CI/CD pipeline documentation"
+  - "docs/process/release-process.md - Release workflow guide"
+  - "docs/process/troubleshooting.md - Common issues and fixes"
+  - "docs/process/onboarding.md - New contributor guide"
+acceptance_criteria:
+  - "All 10 documentation files exist in docs/process/"
+  - "architecture.md covers: components, data flow, security boundaries"
+  - "workflows.md covers: task creation → claim → implement → PR → merge → release"
+  - "agent-guide.md covers: agent structure, capabilities, API, testing"
+  - "orchestrator-guide.md covers: deployment, monitoring, scaling, debugging"
+  - "github-apps.md covers: creation, permissions, rotation, audit"
+  - "secrets-management.md covers: types, rotation, access control, audit"
+  - "ci-cd.md covers: pipelines, jobs, caching, artifacts, gates"
+  - "release-process.md covers: tagging, signing, deployment, rollback"
+  - "troubleshooting.md covers: top 20 issues with solutions"
+  - "onboarding.md covers: setup, first task, best practices"
+  - "All docs use consistent formatting and cross-references"
+validation_gates:
+  - "Verify all 10 files exist"
+  - "Review each doc for completeness and accuracy"
+  - "Verify cross-references work"
+  - "Test onboarding guide with new contributor"
+  - "Verify troubleshooting covers actual issues encountered"
+  - "Check markdown linting passes"
+depends_on:
+  - 06-framework-commit-push
+  - 10-agent-orchestration
+  - 12-release-workflow
+estimates:
+  effort_hours: 10
+  complexity: Medium
+  risk: Low
+linked_issue: null
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

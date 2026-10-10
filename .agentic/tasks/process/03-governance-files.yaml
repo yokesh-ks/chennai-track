@@ -1,0 +1,46 @@
+id: 03-governance-files
+epic: process
+agent: architect-agent
+title: "Governance Files"
+description: "Create governance files including CODEOWNERS, issue templates, PR template, and contributing guidelines to enforce domain-specific reviews and standardized workflows."
+priority: High
+effort: M
+inputs:
+  - "Repository: yokesh-ks/chennai-track"
+  - "Domain areas: frontend, backend, data, infra, process, docs"
+  - "Required templates: task, bug, feature, docs"
+  - "PR template with Closes # and acceptance checklist"
+outputs:
+  - ".github/CODEOWNERS with domain-specific owners"
+  - ".github/ISSUE_TEMPLATE/task.yaml"
+  - ".github/ISSUE_TEMPLATE/bug.yaml"
+  - ".github/ISSUE_TEMPLATE/feature.yaml"
+  - ".github/ISSUE_TEMPLATE/docs.yaml"
+  - ".github/PULL_REQUEST_TEMPLATE.md"
+  - "CONTRIBUTING.md with agent workflow guidelines"
+acceptance_criteria:
+  - "CODEOWNERS exists with at least 5 domain entries"
+  - "Each domain has at least one owner assigned"
+  - "Task issue template matches the standard format with required fields"
+  - "Bug issue template includes reproduction steps, expected/actual behavior"
+  - "Feature issue template includes problem statement, proposed solution"
+  - "Docs issue template includes scope and target audience"
+  - "PR template enforces 'Closes #' reference"
+  - "PR template includes acceptance criteria checklist"
+  - "PR template includes testing verification section"
+  - "CONTRIBUTING.md documents agent claim/implement/PR workflow"
+validation_gates:
+  - "Verify all files exist in correct locations"
+  - "Validate CODEOWNERS syntax"
+  - "Verify issue templates have required fields"
+  - "Verify PR template structure"
+  - "Test issue creation with templates"
+depends_on:
+  - 01-repo-setup
+estimates:
+  effort_hours: 4
+  complexity: Medium
+  risk: Low
+linked_issue: 4
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

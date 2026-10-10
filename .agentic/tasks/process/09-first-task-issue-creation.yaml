@@ -1,0 +1,49 @@
+id: 09-first-task-issue-creation
+epic: process
+agent: architect-agent
+title: "First Task Issue Creation"
+description: "Test the end-to-end workflow by having the orchestrator create the first real task issue (beyond process epic) via API, creating a branch, and verifying agent can claim it."
+priority: High
+effort: M
+inputs:
+  - "Orchestrator with ORCHESTRATOR_TOKEN"
+  - "GitHub Apps installed and configured"
+  - "Target: Create a sample feature task issue"
+  - "Branch naming convention: task/<id>-<slug>"
+outputs:
+  - "Task issue created via API (e.g., 'Setup Project Structure')"
+  - "Issue has all required fields from template"
+  - "Branch created: task/11-setup-project-structure"
+  - "Branch protection allows app to push to task branch"
+  - "Agent (frontend-agent) can claim issue via API"
+  - "Agent can push commits to task branch"
+  - "Agent can create PR from task branch to develop"
+acceptance_criteria:
+  - "Orchestrator creates issue via GitHub API"
+  - "Issue uses task.yaml template with all fields populated"
+  - "Issue labeled with 'Task' and appropriate domain label"
+  - "Branch created from develop with correct naming"
+  - "GitHub App can push to task branch (not main/develop)"
+  - "Agent claims issue by adding comment with '/claim'"
+  - "Agent pushes signed commits to task branch"
+  - "Agent creates PR targeting develop branch"
+  - "PR includes 'Closes #' reference"
+  - "PR passes CI checks"
+validation_gates:
+  - "Verify issue created via API (not manually)"
+  - "Verify branch exists with correct name"
+  - "Verify branch protection allows app push to task branch"
+  - "Verify agent can claim issue"
+  - "Verify agent can push to task branch"
+  - "Verify agent can create PR"
+  - "Verify PR targets develop branch"
+  - "Verify CI runs on PR"
+depends_on:
+  - 08-secrets-configuration
+estimates:
+  effort_hours: 4
+  complexity: Medium
+  risk: Medium
+linked_issue: 10
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

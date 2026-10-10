@@ -1,0 +1,49 @@
+id: 05-process-epic-definition
+epic: process
+agent: architect-agent
+title: "Process Epic Definition"
+description: "Create epic YAML + 13 task YAMLs in .agentic/epics/ and .agentic/tasks/process/ defining the Agentic Development Process epic and all its tasks."
+priority: High
+effort: M
+inputs:
+  - "Epic definition from GitHub issue #1"
+  - "Task definitions from GitHub issues #2-#10"
+  - "Additional tasks inferred from epic acceptance criteria"
+outputs:
+  - ".agentic/epics/process.yaml with epic metadata"
+  - ".agentic/tasks/process/01-repo-setup.yaml"
+  - ".agentic/tasks/process/02-branch-protection.yaml"
+  - ".agentic/tasks/process/03-governance-files.yaml"
+  - ".agentic/tasks/process/04-ci-pipeline.yaml"
+  - ".agentic/tasks/process/05-process-epic-definition.yaml"
+  - ".agentic/tasks/process/06-framework-commit-push.yaml"
+  - ".agentic/tasks/process/07-github-apps-creation.yaml"
+  - ".agentic/tasks/process/08-secrets-configuration.yaml"
+  - ".agentic/tasks/process/09-first-task-issue-creation.yaml"
+  - ".agentic/tasks/process/10-agent-orchestration.yaml"
+  - ".agentic/tasks/process/11-metrics-dashboard.yaml"
+  - ".agentic/tasks/process/12-release-workflow.yaml"
+  - ".agentic/tasks/process/13-documentation.yaml"
+acceptance_criteria:
+  - ".agentic/epics/process.yaml exists with epic metadata (id, title, description, status, priority, labels, agents, tasks, acceptance_criteria, dependencies, linked_issues)"
+  - "13 task YAML files exist in .agentic/tasks/process/"
+  - "Each task has: id, epic, agent, title, description, priority, effort, inputs, outputs, acceptance_criteria, validation_gates, depends_on, estimates, linked_issue, created_at, updated_at"
+  - "Task IDs match the pattern: 01-repo-setup through 13-documentation"
+  - "Dependencies correctly reference prior task IDs"
+  - "Linked issues match GitHub issue numbers where applicable"
+validation_gates:
+  - "Verify all 14 files exist (1 epic + 13 tasks)"
+  - "Validate YAML syntax for all files"
+  - "Verify each task has all required fields"
+  - "Verify dependency chain is valid (no circular deps)"
+  - "Verify linked_issue references are correct"
+depends_on:
+  - 01-repo-setup
+  - 03-governance-files
+estimates:
+  effort_hours: 4
+  complexity: Medium
+  risk: Low
+linked_issue: 6
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

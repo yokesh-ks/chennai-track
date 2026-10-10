@@ -1,0 +1,38 @@
+id: 01-repo-setup
+epic: process
+agent: architect-agent
+title: "Repository Initialization"
+description: "Initialize the GitHub repository with proper structure, default branch, and initial configuration files."
+priority: High
+effort: S
+inputs:
+  - "Repository name: chennai-track"
+  - "Owner: yokesh-ks"
+  - "Description: Chennai Local Train Web App - Trustworthy companion for Chennai suburban railway"
+  - "Default branch: main"
+  - "Visibility: Public"
+outputs:
+  - "GitHub repository created at github.com/yokesh-ks/chennai-track"
+  - "Default branch set to 'main'"
+  - "Repository description and topics set"
+  - "Initial README.md present"
+acceptance_criteria:
+  - "Repository exists at github.com/yokesh-ks/chennai-track"
+  - "Default branch is 'main' (not 'master')"
+  - "Repository has description matching the product"
+  - "Topics include: chennai, local-train, pwa, transit, react, typescript"
+  - "README.md exists with project overview"
+  - "Repository is public"
+validation_gates:
+  - "Verify repository URL accessible"
+  - "Verify default branch name"
+  - "Verify description and topics"
+  - "Verify README.md content"
+depends_on: []
+estimates:
+  effort_hours: 2
+  complexity: Low
+  risk: Low
+linked_issue: 2
+created_at: "2026-10-10"
+updated_at: "2026-10-10"

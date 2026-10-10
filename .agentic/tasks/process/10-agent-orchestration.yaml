@@ -1,0 +1,50 @@
+id: 10-agent-orchestration
+epic: process
+agent: devops-agent
+title: "Agent Orchestration System"
+description: "Build the orchestrator service that manages task lifecycle: creates issues, assigns agents, monitors progress, handles retries, and coordinates multi-agent workflows."
+priority: High
+effort: L
+inputs:
+  - "GitHub Apps with permissions for all agents"
+  - "ORCHESTRATOR_TOKEN secret configured"
+  - "Task queue/data store (GitHub Issues + Projects)"
+  - "Agent capability registry"
+outputs:
+  - "Orchestrator service deployed (Cloud Run / Fly.io / Railway)"
+  - "API endpoint for task creation"
+  - "Agent registration and heartbeat mechanism"
+  - "Task assignment algorithm (round-robin / capability-based)"
+  - "Progress monitoring with webhook handlers"
+  - "Retry logic for failed tasks"
+  - "Multi-agent coordination for dependent tasks"
+  - "Status dashboard API"
+acceptance_criteria:
+  - "Orchestrator service runs and responds to health checks"
+  - "Can create task issues via GitHub API"
+  - "Can list available agents and their capabilities"
+  - "Can assign tasks to agents based on labels/capabilities"
+  - "Receives webhook events for issue updates"
+  - "Tracks task status: pending → claimed → in_progress → review → done"
+  - "Handles agent failures with automatic retry (max 3)"
+  - "Enforces task dependencies (blocks until depends_on complete)"
+  - "Provides API for dashboard: /tasks, /agents, /metrics"
+  - "Logs all decisions for audit trail"
+validation_gates:
+  - "Deploy orchestrator and verify health endpoint"
+  - "Create test task via orchestrator API"
+  - "Verify agent receives and claims task"
+  - "Verify task status transitions work"
+  - "Test retry logic with simulated agent failure"
+  - "Test dependency blocking"
+  - "Verify dashboard API returns correct data"
+  - "Load test: handle 50 concurrent tasks"
+depends_on:
+  - 09-first-task-issue-creation
+estimates:
+  effort_hours: 20
+  complexity: High
+  risk: High
+linked_issue: null
+created_at: "2026-10-10"
+updated_at: "2026-10-10"
