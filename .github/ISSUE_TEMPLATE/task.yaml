@@ -1,0 +1,47 @@
+---
+name: Task
+about: Agent task template for Chennai Track work items
+title: "[TASK] <short title>"
+labels: ["Task"]
+assignees: ""
+---
+
+# Task
+
+## Epic
+- Epic: [#1](https://github.com/yokesh-ks/chennai-track/issues/1) (process: Agentic Development Process)
+- Agent: architect-agent
+- Priority: <High | Medium | Low>
+- Effort: <S | M | L>
+
+---
+
+## Description
+
+<Describe the work to be done. Be specific and actionable.>
+
+---
+
+## Acceptance Criteria
+
+- [ ] <Criterion 1>
+- [ ] <Criterion 2>
+- [ ] <Criterion 3>
+
+---
+
+## Dependencies
+
+- <Dependency 1, e.g. Task N (Repository Initialization)>
+
+---
+
+## Linked Epic
+
+Closes [#1](https://github.com/yokesh-ks/chennai-track/issues/1) (when all tasks complete)
+
+---
+
+## Notes
+
+- <Any additional context, links, or constraints.>
