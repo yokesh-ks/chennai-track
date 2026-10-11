@@ -1,0 +1,14 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "mcp": {
+    "agent-sops": {
+      "type": "local",
+      "command": [".venv/bin/strands-agents-sops", "mcp"],
+      "enabled": true,
+      "timeout": 10000
+    }
+  },
+  "skills": {
+    "paths": [".agents/skills"]
+  }
+}
