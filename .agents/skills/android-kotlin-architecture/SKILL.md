@@ -9,16 +9,16 @@ description: >
 
 # Android Kotlin — Architecture Module
 
-Parent kit: [`../../SKILL.md`](../../SKILL.md) · Index: [`../../AGENTS.md`](../../AGENTS.md)
+Parent kit: [`SKILL.md`](../compose-kotlin/SKILL.md) · Index: [`AGENTS.md`](../../AGENTS.md)
 
 ## Read First
 
 | File | When |
 |------|------|
-| [`../../references/01-architecture.md`](../../references/01-architecture.md) | Full MVVM/MVI patterns, container/content composables |
-| [`../../references/04-coroutines-flow.md`](../../references/04-coroutines-flow.md) | StateFlow, Channel effects, stateIn |
-| [`../../references/05-hilt-di.md`](../../references/05-hilt-di.md) | @HiltViewModel, repository wiring |
-| [`../../references/06-room-db.md`](../../references/06-room-db.md) | Repository + Room offline-first |
+| [`01-architecture.md`](../compose-kotlin/references/01-architecture.md) | Full MVVM/MVI patterns, container/content composables |
+| [`04-coroutines-flow.md`](../compose-kotlin/references/04-coroutines-flow.md) | StateFlow, Channel effects, stateIn |
+| [`05-hilt-di.md`](../compose-kotlin/references/05-hilt-di.md) | @HiltViewModel, repository wiring |
+| [`06-room-db.md`](../compose-kotlin/references/06-room-db.md) | Repository + Room offline-first |
 
 ## MVI Contract (Mandatory)
 

@@ -9,22 +9,21 @@ description: >
 
 # Android Kotlin — Testing Module
 
-Parent kit: [`../../SKILL.md`](../../SKILL.md) · Index: [`../../AGENTS.md`](../../AGENTS.md)
+Parent kit: [`SKILL.md`](../compose-kotlin/SKILL.md) · Index: [`AGENTS.md`](../../AGENTS.md)
 
 ## Read First
 
 | File | When |
 |------|------|
-| [`../../references/11-testing.md`](../../references/11-testing.md) | Turbine, fakes, Compose test tags |
-| [`../../references/05-hilt-di.md`](../../references/05-hilt-di.md) | TestInstallIn modules |
-| [`../../references/13-release-checklist.md`](../../references/13-release-checklist.md) | Pre-ship checklist |
+| [`11-testing.md`](../compose-kotlin/references/11-testing.md) | Turbine, fakes, Compose test tags |
+| [`05-hilt-di.md`](../compose-kotlin/references/05-hilt-di.md) | TestInstallIn modules |
+| [`13-release-checklist.md`](../compose-kotlin/references/13-release-checklist.md) | Pre-ship checklist |
 
 ## ViewModel Test Template
 
 ```kotlin
 @OptIn(ExperimentalCoroutinesApi::class)
 class FeatureViewModelTest {
-
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 

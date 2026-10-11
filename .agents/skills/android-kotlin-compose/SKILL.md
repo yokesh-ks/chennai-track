@@ -10,13 +10,13 @@ description: >
 
 # Android Kotlin — Compose UI Module
 
-Parent kit: [`../../SKILL.md`](../../SKILL.md) · Index: [`../../AGENTS.md`](../../AGENTS.md) · Banned list: [`../../references/00-banned-antipatterns.md`](../../references/00-banned-antipatterns.md)
+Parent kit: [`SKILL.md`](../compose-kotlin/SKILL.md) · Index: [`AGENTS.md`](../../AGENTS.md) · Banned list: [`00-banned-antipatterns.md`](../compose-kotlin/references/00-banned-antipatterns.md)
 
 ## REVIEW MODE
 
 **Trigger phrases:** "audit this file", "check this composable", "review this screen", "review mode", "a11y pass on this composable".
 
-When triggered, **silently run this 6-point checklist** on the target file before responding. Cite failures by checklist number and banned-antipattern row from [`../../references/00-banned-antipatterns.md`](../../references/00-banned-antipatterns.md).
+When triggered, **silently run this 6-point checklist** on the target file before responding. Cite failures by checklist number and banned-antipattern row from [`00-banned-antipatterns.md`](../compose-kotlin/references/00-banned-antipatterns.md).
 
 | # | Check | Fail if |
 |---|-------|---------|
@@ -44,7 +44,7 @@ When triggered, **silently run this 6-point checklist** on the target file befor
 <code block with minimal fix>
 ```
 
-Load [`../../references/17-accessibility.md`](../../references/17-accessibility.md) when audit includes TalkBack, touch targets, or contrast.
+Load [`17-accessibility.md`](../compose-kotlin/references/17-accessibility.md) when audit includes TalkBack, touch targets, or contrast.
 
 ---
 
@@ -56,11 +56,11 @@ Default behavior when **writing new Compose UI** (not auditing). Follow all rule
 
 | File | When |
 |------|------|
-| [`../../references/02-compose-ui.md`](../../references/02-compose-ui.md) | Stability, slots, Material 3, CompositionLocal themes |
-| [`../../references/03-animations.md`](../../references/03-animations.md) | Springs, Canvas, gestures |
-| [`../../references/10-performance.md`](../../references/10-performance.md) | derivedStateOf, LazyColumn keys, baseline profiles |
-| [`../../references/16-coil-image.md`](../../references/16-coil-image.md) | AsyncImage, Coil 3.4 network dep |
-| [`../../references/17-accessibility.md`](../../references/17-accessibility.md) | Semantics, 48dp targets, WCAG |
+| [`02-compose-ui.md`](../compose-kotlin/references/02-compose-ui.md) | Stability, slots, Material 3, CompositionLocal themes |
+| [`03-animations.md`](../compose-kotlin/references/03-animations.md) | Springs, Canvas, gestures |
+| [`10-performance.md`](../compose-kotlin/references/10-performance.md) | derivedStateOf, LazyColumn keys, baseline profiles |
+| [`16-coil-image.md`](../compose-kotlin/references/16-coil-image.md) | AsyncImage, Coil 3.4 network dep |
+| [`17-accessibility.md`](../compose-kotlin/references/17-accessibility.md) | Semantics, 48dp targets, WCAG |
 
 ## Edge-to-Edge (Default — AGP 9 / API 35+)
 
@@ -141,4 +141,4 @@ fun AccountCard(
 | `items(list)` without key | `items(list, key = { it.id })` |
 | Raw `fontSize = 16.sp` | `MaterialTheme.typography.bodyLarge` |
 
-Full list: [`../../references/00-banned-antipatterns.md`](../../references/00-banned-antipatterns.md)
+Full list: [`00-banned-antipatterns.md`](../compose-kotlin/references/00-banned-antipatterns.md)
